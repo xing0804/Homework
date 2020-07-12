@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math对象</title>
+    <script>
+        // console.log(Math);
+        // for(var i in Math){
+        //     console.log(i);
+        // }
+
+        // console.log(Math.PI);
+
+        function shape(r) {
+            this.r = r;
+            this.area = function () {
+                console.log(this.r * this.r * Math.PI);
+            }
+        }
+        // class shape{
+        //     constructor(r){
+        //         this.r=r;
+        //     }
+        //     area(){
+        //         console.log(this.r*this.r*Math.PI);
+        //         // console.log(this.r*this.r);
+        //     }
+        // }
+        class circle extends shape {
+            constructor(r) {
+                super(r);
+            }
+        }
+
+        var s = new shape(2);
+        s.area();
+        var cir = new circle(3);
+        cir.area();
+
+
+        console.log(Math.abs(-255));
+        console.log(Math.round(18.45));
+        console.log(Math.ceil(18.2));
+        console.log(Math.floor(18.9));
+        console.log(Math.max(5.10, 15));
+        console.log(Math.min(5, 10));
+        console.log(Math.random());
+
+        //实现随机数
+        var num = setInterval(function () { RandomNum() }, 1000);
+
+        function RandomNum() {
+            // document.write(Math.random());
+            num = Math.random();
+            var p = document.getElementById("num");
+            p.innerHTML = num;
+        }
+
+        // setTimeout(document.write(Math.random()),100);
+
+        console.log(Math.trunc(10.98));
+        console.log(Math.pow(2, 3));
+        console.log(Math.pow(27, 1 / 3));
+        console.log(Math.sqrt(4));
+        console.log(Math.sin(30 * Math.PI / 180));
+        console.log(Math.cos(60 * Math.PI / 180));
+        console.log(Math.tan(45 * Math.PI / 180));
+        console.log(3.14159365.toFixed(2));
+
+
+        var arr = [23, 4, 651, 461, 1231, 411];
+        var maxArr = Math.max(...arr);    //  arr数组中的最大值
+        var minArr = Math.min(...arr);   //  arr数组中的最小值
+        console.log(maxArr+"和"+minArr);
+
+
+        //实现随机数进阶
+        var num2 = setInterval(function () { RandomNum2(2,20) }, 1000);
+
+        function RandomNum2(x,y) {
+            num2 = Math.floor( Math.random() * (y - x + 1) + x  )      // 包含x包含y 
+            var h1 = document.getElementById("num2");
+            h1.innerHTML = num2;
+        }
+        // console.log(Math.floor( Math.random() * (10 - 5 + 1) + 5  ));
+
+
+    </script>
+</head>
+
+<body>
+    <p id="num"></p>
+    <h1 id="num2"></h1>
+</body>
+
+</html>

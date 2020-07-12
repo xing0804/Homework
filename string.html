@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String对象</title>
+    <script>
+
+
+        var str = "Hello World!";
+        console.log(str.length);
+        console.log(str.charAt(6)); //返回下标为index的子字符串
+        console.log(str.charCodeAt(2));
+        console.log(str.indexOf('a'));
+        console.log(str.indexOf('0'));
+        console.log(str.lastIndexOf('o'));
+        ;
+        // str.replace('Hello','a'); 
+        console.log(str.replace('o', 'a'));
+        console.log(str.replace('Hello', 'a'));
+
+        console.log(str.slice(0, 8));// 截取时，包含起始下标，不包含结束下标； 不修改原字符串
+        console.log(str.substring(0, 8));
+        console.log(str.substr(1, 6));
+        console.log(str.split('o'));   //["hell", " w", "rld"]
+        console.log(str.split(''));    //["h", "e", "l", "l", "o", " ", "w", "o", "r", "l", "d"]
+        console.log(str.split(' '));
+
+        var str1 = "2020/7/12";
+        console.log(str1.split('/'));
+
+        console.log(str.toLowerCase());
+        console.log(str.toUpperCase());
+
+        var a = '   aa   bb   ';
+        console.log(a.trim());       //"aa   bb"
+
+        var str2 = 'hello world';
+        console.log(str2.match('l'));   //["l", index: 2, input: "hello world", groups: undefined]
+        // confirm.log(str2.match(/l/g));   // (2) ["o", "o"]
+
+        // console.log(str.concat(str1,str2));
+        console.log(str.concat(str1));
+
+
+        // 'abc'.padStart(10);         // "       abc"
+        // 'abc'.padStart(10, "123");  // "1231231abc"
+        // 'abc'.padStart(6, "123465"); // "123abc"
+        // 'abc'.padStart(8, "0");     // "00000abc"
+        // 'abc'.padStart(1);          // "abc"
+
+        // 'abc'.padEnd(10);         // "abc       "
+        // 'abc'.padEnd(10, "123");  // "abc1231231"
+        // 'abc'.padEnd(6, "123465"); // "abc123"
+        // 'abc'.padEnd(8, "0");     // "abc00000"
+        // 'abc'.padEnd(1);          // "abc"
+        console.log('abc'.padStart(10));
+        console.log('abc'.padStart(10, "123"));
+        console.log('abc'.padStart(6, "123465"));
+        console.log('abc'.padStart(8, "0"));
+        console.log('abc'.padStart(1));
+
+        console.log('abc'.padEnd(10));
+        console.log('abc'.padEnd(10, "123"));
+        console.log('abc'.padEnd(6, "123465"));
+        console.log('abc'.padEnd(8, "0"));
+        console.log('abc'.padEnd(1));
+
+        // 获取时间，如果只有一位则前面用0填充
+        var time = new Date();
+        var h = String(time.getHours()).padStart(2, '0')
+        var m = String(time.getMinutes()).padStart(2, '0')
+        var s = String(time.getSeconds()).padStart(2, '0')
+        console.log(`${h}:${m}:${s}`)    // 18:09:03
+
+
+        //字符串与json对象之间的转换
+        var json={name:"张三",age:12,sex:"man"};
+        var str3=JSON.stringify(json);
+        console.log(JSON.stringify(json));
+        console.log(JSON.parse(str3) );
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
